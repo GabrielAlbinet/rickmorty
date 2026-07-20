@@ -1,0 +1,32 @@
+<article
+  class="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-cyan-400/20 bg-slate-900/70 shadow-xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]"
+>
+  <div
+    class="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl transition group-hover:bg-cyan-400/20"
+  ></div>
+
+  <div class="relative flex flex-1 flex-col p-6">
+    <span class="text-xs uppercase tracking-[0.25em] text-slate-400">
+      {{ location().type || 'Unknown' }}
+    </span>
+
+    <h2 class="mt-3 line-clamp-1 text-2xl font-black text-white">
+      {{ location().name }}
+    </h2>
+
+    <div class="mt-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-slate-400">Dimension</span>
+        <span class="line-clamp-1 max-w-[60%] text-right font-semibold text-cyan-300">
+          {{ location().dimension }}
+        </span>
+      </div>
+    </div>
+
+    <div class="mt-6 flex items-center justify-between border-t border-slate-700 pt-4">
+      <span class="text-sm text-slate-400">
+        {{ location().residents.length }} habitant(s)
+      </span>
+    </div>
+  </div>
+</article>
