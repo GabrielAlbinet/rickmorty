@@ -1,0 +1,52 @@
+<nav
+  class="mt-12 mb-12 flex items-center justify-center"
+  aria-label="Pagination"
+>
+
+  <div
+    class="flex items-center gap-2 rounded-3xl border border-green-400/20 bg-slate-900/70 p-3 shadow-xl backdrop-blur-xl"
+  >
+
+    <!-- Previous -->
+    <button
+      (click)="previousPage()"
+      [disabled]="currentPage() === 1"
+      class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 text-slate-300 transition hover:border-green-400 hover:text-green-300 disabled:cursor-not-allowed disabled:opacity-30"
+    >
+      ←
+    </button>
+
+
+    <!-- Pages -->
+
+    @for(page of visiblePage(); track page) {
+
+      <button
+        (click)="selectPage(page)"
+        class="flex h-10 min-w-10 items-center justify-center rounded-full px-3 font-semibold transition"
+        [ngClass]="{
+          'bg-green-400 text-slate-950 shadow-[0_0_20px_rgba(74,222,128,0.7)]':
+            page === currentPage(),
+
+          'text-slate-300 hover:bg-slate-800 hover:text-green-300':
+            page !== currentPage()
+        }"
+      >
+        {{ page }}
+      </button>
+
+    }
+
+
+    <!-- Next -->
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage() === totalPages()"
+      class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 text-slate-300 transition hover:border-green-400 hover:text-green-300 disabled:cursor-not-allowed disabled:opacity-30"
+    >
+      →
+    </button>
+
+  </div>
+
+</nav>

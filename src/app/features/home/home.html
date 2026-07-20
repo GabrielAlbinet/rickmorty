@@ -1,0 +1,166 @@
+<div class="relative overflow-hidden bg-slate-950 text-white">
+  <!-- Background -->
+  <div
+    class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,#1e293b_0%,#020617_70%)]"
+  ></div>
+
+  <!-- Glow -->
+  <div
+    class="absolute left-1/2 top-20 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-[150px]"
+  ></div>
+
+  <!-- ================= HERO ================= -->
+
+  <section
+    class="relative mx-auto flex min-h-[85vh] max-w-7xl flex-col items-center justify-center px-6 text-center"
+  >
+    <div class="relative mb-12">
+      <div class="absolute inset-0 animate-pulse rounded-full bg-green-400 blur-[80px]"></div>
+
+      <div
+        class="relative flex h-56 w-56 items-center justify-center rounded-full border-[12px] border-green-400/30"
+      >
+        <div
+          class="absolute inset-4 animate-spin rounded-full border-4 border-cyan-300/30 border-t-cyan-200"
+          style="animation-duration: 18s"
+        ></div>
+
+        <div
+          class="absolute inset-10 animate-spin rounded-full border-4 border-green-300/30 border-b-green-200"
+          style="animation-direction: reverse; animation-duration: 12s"
+        ></div>
+
+        <span class="text-7xl">🌀</span>
+      </div>
+    </div>
+
+    <span
+      class="rounded-full border border-green-400/40 bg-green-400/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-green-300"
+    >
+      Explore the Multiverse
+    </span>
+
+    <h1 class="mt-8 max-w-5xl text-5xl font-black leading-tight md:text-7xl">
+      Découvrez chaque
+      <span
+        class="bg-gradient-to-r from-green-300 via-cyan-300 to-green-400 bg-clip-text text-transparent"
+      >
+        personnage,
+      </span>
+
+      planète et épisode du multivers.
+    </h1>
+
+    <p class="mt-8 max-w-2xl text-xl leading-relaxed text-slate-300">
+      Naviguez à travers les dimensions et retrouvez toutes les informations de l'univers de Rick &
+      Morty dans une interface moderne inspirée des portails interdimensionnels.
+    </p>
+
+    <div class="mt-12 flex flex-wrap justify-center gap-6">
+      <a
+        routerLink="/characters"
+        class="rounded-full bg-green-400 px-10 py-4 font-bold text-slate-950 transition hover:scale-105"
+      >
+        Explorer les personnages
+      </a>
+
+      <a
+        routerLink="/episodes"
+        class="rounded-full border border-cyan-300 px-10 py-4 font-semibold text-cyan-300 transition hover:bg-cyan-300 hover:text-slate-950"
+      >
+        Voir les épisodes
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+
+  <section class="relative mx-auto max-w-7xl px-6 py-20">
+    <div class="grid gap-6 md:grid-cols-4">
+      <div class="rounded-3xl border border-green-400/20 bg-slate-900/60 p-8 backdrop-blur">
+        <p class="text-5xl font-black text-green-300">826+</p>
+        <p class="mt-3 text-slate-400">Personnages</p>
+      </div>
+
+      <div class="rounded-3xl border border-cyan-400/20 bg-slate-900/60 p-8 backdrop-blur">
+        <p class="text-5xl font-black text-cyan-300">126</p>
+        <p class="mt-3 text-slate-400">Lieux</p>
+      </div>
+
+      <div class="rounded-3xl border border-emerald-400/20 bg-slate-900/60 p-8 backdrop-blur">
+        <p class="text-5xl font-black text-emerald-300">51</p>
+        <p class="mt-3 text-slate-400">Épisodes</p>
+      </div>
+
+      <div class="rounded-3xl border border-yellow-400/20 bg-slate-900/60 p-8 backdrop-blur">
+        <p class="text-5xl font-black text-yellow-300">∞</p>
+        <p class="mt-3 text-slate-400">Dimensions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+
+  <section class="mx-auto max-w-7xl px-6 py-24">
+    <h2 class="mb-16 text-center text-5xl font-black">Explore le multivers</h2>
+
+    <div class="grid gap-8 lg:grid-cols-3">
+      <article
+        class="group rounded-3xl border border-green-400/20 bg-slate-900/60 p-8 transition hover:-translate-y-3 hover:border-green-400"
+      >
+        <div class="text-6xl">👨‍🔬</div>
+
+        <h3 class="mt-6 text-3xl font-bold">Personnages</h3>
+
+        <p class="mt-4 text-slate-400">
+          Découvrez les héros, aliens, clones et créatures des différentes dimensions.
+        </p>
+      </article>
+
+      <article
+        class="group rounded-3xl border border-cyan-400/20 bg-slate-900/60 p-8 transition hover:-translate-y-3 hover:border-cyan-400"
+      >
+        <div class="text-6xl">🌎</div>
+
+        <h3 class="mt-6 text-3xl font-bold">Planètes</h3>
+
+        <p class="mt-4 text-slate-400">
+          Voyagez sur des centaines de mondes remplis de civilisations étranges.
+        </p>
+      </article>
+
+      <article
+        class="group rounded-3xl border border-emerald-400/20 bg-slate-900/60 p-8 transition hover:-translate-y-3 hover:border-emerald-400"
+      >
+        <div class="text-6xl">📺</div>
+
+        <h3 class="mt-6 text-3xl font-bold">Épisodes</h3>
+
+        <p class="mt-4 text-slate-400">
+          Retrouvez chaque épisode et tous les personnages qui y apparaissent.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+
+  <section class="mx-auto max-w-5xl px-6 py-24">
+    <div
+      class="rounded-[40px] border border-green-400/20 bg-gradient-to-r from-slate-900 to-slate-800 p-16 text-center"
+    >
+      <h2 class="text-5xl font-black">Prêt à ouvrir un portail ?</h2>
+
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
+        Des centaines de personnages, des dizaines de planètes et tous les épisodes vous attendent.
+      </p>
+
+      <a
+        routerLink="/characters"
+        class="mt-10 inline-flex rounded-full bg-green-400 px-10 py-4 font-bold text-slate-950 transition hover:scale-105"
+      >
+        Commencer l'exploration
+      </a>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,104 @@
+<div
+  class="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 text-white"
+>
+  <!-- Background -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_center,#1e293b_0%,#020617_70%)]"
+  ></div>
+
+  <!-- Stars -->
+  <div class="absolute inset-0 opacity-40">
+    <div
+      class="absolute h-1 w-1 animate-pulse rounded-full bg-white"
+      style="top: 10%; left: 20%"
+    ></div>
+    <div
+      class="absolute h-2 w-2 animate-ping rounded-full bg-cyan-300"
+      style="top: 25%; left: 80%"
+    ></div>
+    <div
+      class="absolute h-1 w-1 animate-pulse rounded-full bg-green-300"
+      style="top: 60%; left: 10%"
+    ></div>
+    <div
+      class="absolute h-2 w-2 animate-pulse rounded-full bg-white"
+      style="top: 70%; left: 75%"
+    ></div>
+    <div
+      class="absolute h-1 w-1 animate-ping rounded-full bg-cyan-400"
+      style="top: 40%; left: 55%"
+    ></div>
+  </div>
+
+  <!-- Giant Portal -->
+  <div
+    class="absolute h-[650px] w-[650px] md:h-[950px] md:w-[950px]"
+  >
+    <!-- Outer Ring -->
+    <div
+      class="h-full w-full animate-spin rounded-full border-[22px] border-green-400/20 border-t-green-300 blur-sm"
+      style="animation-duration: 22s"
+    ></div>
+
+    <!-- Inner Ring -->
+    <div
+      class="absolute inset-10 animate-spin rounded-full border-[14px] border-cyan-300/20 border-b-cyan-200"
+      style="animation-direction: reverse; animation-duration: 14s"
+    ></div>
+
+    <!-- Glow -->
+    <div
+      class="absolute inset-24 rounded-full bg-gradient-to-br from-green-400 via-emerald-500 to-cyan-500 opacity-40 blur-[120px]"
+    ></div>
+  </div>
+
+  <!-- Dark overlays to improve readability -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.35)_45%,rgba(2,6,23,0.9)_100%)]"
+  ></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-2xl px-6 text-center">
+
+    <h1
+      class="text-8xl font-black text-white drop-shadow-[0_0_35px_rgba(74,222,128,0.8)] md:text-[11rem]"
+    >
+      404
+    </h1>
+
+    <h2
+      class="mt-6 text-4xl font-extrabold text-white drop-shadow-lg"
+    >
+      Wubba Lubba Dub Dub!
+    </h2>
+
+    <p
+      class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-200"
+    >
+      Cette page semble avoir été aspirée dans un portail
+      interdimensionnel...
+      <br />
+      Rick a probablement encore bricolé quelque chose qu'il n'aurait pas dû.
+    </p>
+
+    <div class="mt-12 flex flex-wrap justify-center gap-4">
+
+      <button
+        routerLink="/"
+        class="rounded-full bg-green-400 px-8 py-4 font-bold text-slate-950 shadow-[0_0_30px_rgba(74,222,128,0.5)] transition duration-300 hover:scale-105 hover:bg-green-300 hover:shadow-[0_0_50px_rgba(74,222,128,0.8)]"
+      >
+        Retour à la Terre C-137
+      </button>
+
+      <button
+        onclick="history.back()"
+        class="rounded-full border border-cyan-300 bg-slate-900/50 px-8 py-4 font-semibold text-cyan-300 backdrop-blur transition hover:scale-105 hover:bg-cyan-300 hover:text-slate-950"
+      >
+        Revenir en arrière
+      </button>
+
+    </div>
+  </div>
+</div>

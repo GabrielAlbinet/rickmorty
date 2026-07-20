@@ -1,0 +1,80 @@
+<header
+  class="sticky top-0 z-50 border-b border-emerald-400/20 bg-slate-950/70 backdrop-blur-xl"
+>
+  <div
+    class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6"
+  >
+    <!-- Logo -->
+    <a
+      routerLink="/"
+      class="group flex items-center gap-4"
+    >
+      <div class="relative">
+        <div
+          class="absolute inset-0 animate-pulse rounded-full bg-green-400 blur-xl"
+        ></div>
+
+        <div
+          class="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-green-400 bg-slate-900"
+        >
+          🌀
+        </div>
+      </div>
+
+      <div>
+        <h1
+          class="bg-gradient-to-r from-green-300 via-cyan-300 to-emerald-400 bg-clip-text text-2xl font-black text-transparent"
+        >
+          PortalDex
+        </h1>
+
+        <p class="text-xs uppercase tracking-[0.35em] text-slate-400">
+          Multiverse Explorer
+        </p>
+      </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="hidden items-center gap-10 md:flex">
+      <a
+        routerLink="/characters"
+        class="group relative font-semibold text-slate-300 transition hover:text-green-300"
+      >
+        Personnages
+
+        <span
+          class="absolute -bottom-2 left-0 h-0.5 w-0 bg-green-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+
+      <a
+        routerLink="/locations"
+        class="group relative font-semibold text-slate-300 transition hover:text-cyan-300"
+      >
+        Planètes
+
+        <span
+          class="absolute -bottom-2 left-0 h-0.5 w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+
+      <a
+        routerLink="/episodes"
+        class="group relative font-semibold text-slate-300 transition hover:text-emerald-300"
+      >
+        Épisodes
+
+        <span
+          class="absolute -bottom-2 left-0 h-0.5 w-0 bg-emerald-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+    </nav>
+
+    <!-- Search -->
+    <button
+      class="rounded-full border border-green-400/40 bg-slate-900 p-3 transition hover:scale-110 hover:border-green-300 hover:bg-slate-800"
+    >
+      🔍
+    </button>
+  </div>
+</header>

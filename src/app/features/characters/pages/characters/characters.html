@@ -1,0 +1,44 @@
+<section class="relative min-h-screen overflow-hidden bg-slate-950 px-6 py-20 text-white">
+  <!-- Background spatial -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,#1e293b_0%,#020617_65%)]"></div>
+
+  <!-- Glow portail -->
+  <div
+    class="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-green-400/10 blur-[150px]"
+  ></div>
+
+  <!-- Contenu -->
+  <div class="relative z-10 mx-auto max-w-7xl">
+    <!-- Header de page -->
+    <div class="mb-16 text-center">
+      <span
+        class="rounded-full border border-green-400/30 bg-green-400/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-green-300"
+      >
+        Multiverse Database
+      </span>
+
+      <h1 class="mt-6 text-5xl font-black md:text-6xl">
+        Personnages du
+        <span
+          class="bg-gradient-to-r from-green-300 via-cyan-300 to-green-400 bg-clip-text text-transparent"
+        >
+          multivers
+        </span>
+      </h1>
+
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
+        Découvrez les personnages et créatures rencontrées au cours des voyages interdimensionnels.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <app-pagination [currentPage]="currentPage()" [totalPages]="totalPage()" (changePage)="changePage($event)"/>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+      @for(character of characters(); track character.id) {
+
+      <app-character-card [character]="character" />
+
+      }
+    </div>
+  </div>
+</section>
