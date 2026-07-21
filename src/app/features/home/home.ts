@@ -21,7 +21,7 @@ export class Home implements OnInit {
 
   ngOnInit() {
     this.charactersService.getCharacterFromComponent().subscribe((response) => {
-      this.charactersCount.set(response.info.count);
+      this.charactersCount.set(response.info.count); /*Format vu dans l'API */
     });
 
     this.locationsService.getLocationFromComponent().subscribe((response) => {
