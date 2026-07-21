@@ -23,10 +23,31 @@
       </div>
     </div>
 
-    <div class="mt-6 flex items-center justify-between border-t border-slate-700 pt-4">
+    <!-- Bouton cliquable pour afficher la liste des résidents -->
+    <button
+      (click)="toggleResidents()"
+      [disabled]="location().residents.length === 0"
+      class="mt-6 flex w-full items-center justify-between border-t border-slate-700 pt-4 text-left transition disabled:cursor-not-allowed disabled:opacity-50"
+    >
       <span class="text-sm text-slate-400">
         {{ location().residents.length }} habitant(s)
       </span>
-    </div>
+      @if (location().residents.length > 0) {
+        <span class="text-cyan-300 transition" [class.rotate-180]="isExpanded()">▾</span>
+      }
+    </button>
+
+    <!-- Bloc déroulant -->
+    @if (isExpanded()) {
+      <div class="mt-3 max-h-48 space-y-1 overflow-y-auto rounded-xl bg-slate-950/60 p-3">
+        @if (isLoadingResidents()) {
+          <p class="text-sm text-slate-400">Chargement...</p>
+        } @else {
+          @for (name of residentsNames(); track name) {
+            <p class="text-sm text-slate-300">{{ name }}</p>
+          }
+        }
+      </div>
+    }
   </div>
 </article>

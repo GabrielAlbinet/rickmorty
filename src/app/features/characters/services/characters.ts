@@ -22,7 +22,7 @@ export class CharactersService {
 
   getCharactersFromService(page: number = 1, filters: CharacterFilters = {}): Observable<ApiResponse<Character[]>> {
     return this.http.get<ApiResponse<Character[]>>(this.url, {
-        params: this.buildParams(page, filters),
+        params: this.buildParams(page, filters), /* Précise les filtres de recherches et la page à envoyer pour le changement de page. */
       })
       .pipe(tap((response: ApiResponse<Character[]>) => this.characters.set(response.results)));
   }
@@ -33,6 +33,12 @@ export class CharactersService {
     });
   }
 
+  /* Evite de faire une requete HTTP par résident (sachant qu'il y a des planètes à 100 résidents...) */
+  getCharactersByIds(ids: string): Observable<Character | Character[]> {
+  return this.http.get<Character | Character[]>(`${this.url}${ids}`);
+  }
+
+  /* Permet d'envoyer la page et les filtes en tant qu'objet aux deux fonctions get au-dessus */
   private buildParams(page: number, filters: CharacterFilters) {
     const params: Record<string, string | number> = {page};
     if (filters.name) params['name'] = filters.name;
