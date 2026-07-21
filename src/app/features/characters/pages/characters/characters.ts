@@ -25,6 +25,8 @@ export class Characters implements OnInit {
   speciesFilter = signal('');
   genderFilter = signal('');
 
+  searchError = signal(false);
+
   ngOnInit() {
     this.loadCharacters();
   }
@@ -51,12 +53,24 @@ export class Characters implements OnInit {
   }
 
   /* Appelée au clic du bouton recherche
-     On repart toujours de la page 1 (rester sur la page restante amène des erreurs si la nouvelle recherche a pas assez de pages) */
+     On repart toujours de la page 1 (rester sur la page restante amène des erreurs si la nouvelle recherche a pas assez de pages)
+     Gère aussi les erreurs */
 
   applyFilters() {
-    this.loadCharacters(1);
-    this.characterService.getCharactersFromService(1, this.currentFilters()).subscribe();
-  }
+  this.searchError.set(false);
+  this.currentPage.set(1);
+  this.characterService.getCharactersFromService(1, this.currentFilters()).subscribe({
+    next: (response) => {
+      this.infos.set(response.info);
+      this.totalPage.set(response.info.pages);
+    },
+    error: () => {
+      this.searchError.set(true);
+      this.characterService.resetCharacters();
+      this.totalPage.set(0);
+    },
+  });
+}
 
   /*  Vide les 4 filtres puis relance une recherche...sans filtres du coup. Oui. */
 

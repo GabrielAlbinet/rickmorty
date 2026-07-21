@@ -47,4 +47,9 @@ export class CharactersService {
     if (filters.gender) params['gender'] = filters.gender;
     return params;
   }
+
+  /* Pour vider les paramètres de recherche en cas d'ereur */
+  resetCharacters() {
+  this.characters.set([]);
+  }
 }
