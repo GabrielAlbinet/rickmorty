@@ -31,6 +31,62 @@
       </p>
     </div>
 
+    <div class="mb-10 flex flex-col gap-4 rounded-3xl border border-green-400/20 bg-slate-900/60 p-6 backdrop-blur-xl md:flex-row md:items-center md:justify-between">
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (keyup.enter)="applyFilters()"
+    placeholder="Rechercher un personnage..."
+    class="w-full rounded-full border border-slate-700 bg-slate-950 px-5 py-3 text-white placeholder:text-slate-500 focus:border-green-400 focus:outline-none md:max-w-xs"
+  />
+
+  <div class="flex flex-wrap gap-3">
+    <select
+      [(ngModel)]="statusFilter"
+      class="rounded-full border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white focus:border-green-400 focus:outline-none"
+    >
+      <option value="">Statut</option>
+      <option value="alive">Vivant</option>
+      <option value="dead">Mort</option>
+      <option value="unknown">Inconnu</option>
+    </select>
+
+    <select
+      [(ngModel)]="speciesFilter"
+      class="rounded-full border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white focus:border-green-400 focus:outline-none"
+    >
+      <option value="">Espèce</option>
+      <option value="human">Humain</option>
+      <option value="alien">Alien</option>
+    </select>
+
+    <select
+      [(ngModel)]="genderFilter"
+      class="rounded-full border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white focus:border-green-400 focus:outline-none"
+    >
+      <option value="">Genre</option>
+      <option value="male">Mâle</option>
+      <option value="female">Femelle</option>
+      <option value="genderless">Sans genre</option>
+      <option value="unknown">Inconnu</option>
+    </select>
+
+    <button
+      (click)="applyFilters()"
+      class="rounded-full border border-green-400/40 bg-green-400/10 px-6 py-3 text-sm font-semibold text-green-300 transition hover:bg-green-400/20"
+    >
+      Rechercher
+    </button>
+
+    <button
+      (click)="resetFilters()"
+      class="rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-500"
+    >
+      Réinitialiser
+    </button>
+  </div>
+</div>
+
     <!-- Cards -->
     <app-pagination [currentPage]="currentPage()" [totalPages]="totalPage()" (changePage)="changePage($event)"/>
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">

@@ -1,0 +1,34 @@
+<section class="relative min-h-screen overflow-hidden bg-slate-950 px-6 py-20 text-white">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,#1e293b_0%,#020617_65%)]"></div>
+  <div
+    class="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-400/10 blur-[150px]"
+  ></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl">
+    <div class="mb-16 text-center">
+      <span
+        class="rounded-full border border-purple-400/30 bg-purple-400/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-purple-300"
+      >
+        Multiverse Database
+      </span>
+
+      <h1 class="mt-6 text-5xl font-black md:text-6xl">
+        Épisodes du
+        <span class="bg-gradient-to-r from-purple-300 via-green-300 to-purple-400 bg-clip-text text-transparent">
+          multivers
+        </span>
+      </h1>
+
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
+        Retrouvez chaque épisode diffusé, sa date de sortie et les personnages qui y apparaissent.
+      </p>
+    </div>
+
+    <app-pagination [currentPage]="currentPage()" [totalPages]="totalPage()" (changePage)="changePage($event)" />
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+      @for (episode of episodes(); track episode.id) {
+        <app-episode-card [episode]="episode" />
+      }
+    </div>
+  </div>
+</section>
