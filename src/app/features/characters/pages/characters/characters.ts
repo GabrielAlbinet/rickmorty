@@ -29,6 +29,8 @@ export class Characters implements OnInit {
     this.loadCharacters();
   }
 
+  /* Rassemble les 4 signaux de filtre dans un seul objet, prêt à être envoyé au service avec les mêmes noms de paramètres que CharactersFilters. */
+
   private currentFilters() {
     return {
       name: this.searchTerm(),
@@ -48,10 +50,15 @@ export class Characters implements OnInit {
       });
   }
 
+  /* Appelée au clic du bouton recherche
+     On repart toujours de la page 1 (rester sur la page restante amène des erreurs si la nouvelle recherche a pas assez de pages) */
+
   applyFilters() {
     this.loadCharacters(1);
     this.characterService.getCharactersFromService(1, this.currentFilters()).subscribe();
   }
+
+  /*  Vide les 4 filtres puis relance une recherche...sans filtres du coup. Oui. */
 
   resetFilters() {
     this.searchTerm.set('');
